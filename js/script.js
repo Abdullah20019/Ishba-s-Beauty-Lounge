@@ -1,3 +1,9 @@
+// Fix blank page on browser back/forward (bfcache restore)
+window.addEventListener("pageshow", (event) => {
+  document.body.classList.remove("is-leaving");
+  document.body.classList.add("page-ready");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("page-ready");
   const header = document.querySelector(".site-header");
